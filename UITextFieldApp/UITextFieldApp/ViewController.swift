@@ -10,9 +10,12 @@ import UIKit
 
 protocol ViewControllerDelegate {
     func changeBackgroundColor()
+    func changeText(name:String,lastName:String)
 }
 
 class ViewController: UIViewController {
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
     var delegate: ViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +29,12 @@ class ViewController: UIViewController {
 
     
     @IBAction func btnDelegate(_ sender: UIButton) {
-         self.delegate?.changeBackgroundColor()
+        self.delegate?.changeBackgroundColor()
+        self.delegate?.changeText(name:self.txtName.text!,lastName:self.txtLastName.text!)
     }
     
     @IBAction func btnBack(_ sender: UIButton) {
-        self.delegate?.changeBackgroundColor()
+        //self.delegate?.changeBackgroundColor()
         self.dismiss(animated: true, completion: nil)
     }
 }

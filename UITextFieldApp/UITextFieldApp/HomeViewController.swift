@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController,UITextFieldDelegate, ViewControllerDelegate{
     @IBOutlet weak var txtValue: UITextField!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblLastName: UILabel!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,11 @@ class HomeViewController: UIViewController,UITextFieldDelegate, ViewControllerDe
     
     func changeBackgroundColor() {
         self.view.backgroundColor = .green
+    }
+    
+    func changeText(name: String, lastName: String) {
+        self.lblName.text = name
+        self.lblLastName.text = lastName
     }
     
     @IBAction func btnBack(_ sender: UIButton) {
