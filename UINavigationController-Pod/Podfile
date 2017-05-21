@@ -6,6 +6,7 @@ target 'UINavigationController' do
   use_frameworks!
 
   # Pods for UINavigationController
+      pod 'SwiftMaskTextfield'
 
   target 'UINavigationControllerTests' do
     inherit! :search_paths
