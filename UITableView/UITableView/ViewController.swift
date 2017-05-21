@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var myTableView: UITableView!
-    
+    var names=["Mauricio","Felipe","Gabriel","Gaby","Aline","Tia Isaura","Mauricio","Felipe","Gabriel","Gaby","Aline","Tia Isaura","Mauricio","Felipe","Gabriel","Gaby","Aline","Tia Isaura","Mauricio","Felipe","Gabriel","Gaby","Aline","Tia Isaura","Mauricio","Felipe","Gabriel","Gaby","Aline","Tia Isaura"]
+    var filmes=["X-men","Star Wars","Deadpool","X-men","Star Wars","Deadpool","X-men","Star Wars","Deadpool","X-men","Star Wars","Deadpool","X-men","Star Wars","Deadpool","X-men","Star Wars","Deadpool"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myTableView.dataSource=self
@@ -33,17 +34,33 @@ extension ViewController: UITableViewDelegate{
 
 extension ViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(section==0){
+            return self.names.count
+        }else{
+            return self.filmes.count
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = "Mauricio Martins"
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        if(indexPath.section==0){
+            cell.textLabel?.text = self.names[indexPath.row]
+        }else{
+            cell.textLabel?.text = self.filmes[indexPath.row]
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(section==0){
+            return "Names:"
+        }else{
+            return "Movies:"
+        }
     }
 }
 
