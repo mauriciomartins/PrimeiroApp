@@ -14,8 +14,8 @@ class ViewController: UIViewController ,Screen2ViewControllerDelegate{
     @IBOutlet weak var lblFullName: UILabel!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
-    
-    @IBOutlet weak var txtCPF: UITextField!
+      
+    @IBOutlet weak var txtCPF: SwiftMaskTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = .green
