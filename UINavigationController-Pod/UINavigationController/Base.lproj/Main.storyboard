@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hy-i8-hnd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hy-i8-hnd" customClass="SwiftMaskTextField">
                                 <rect key="frame" x="64" y="106" width="191" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -48,6 +48,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9l-a5-4Ko" customClass="SwiftMaskTextField" customModule="SwiftMaskTextfield">
+                                <rect key="frame" x="64" y="217" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="formatPattern" value="###.###.###-##"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.97715279346809347" green="1" blue="0.87276772669764846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,6 +76,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lblFullName" destination="Ktq-p9-s0Z" id="nG3-lz-PEs"/>
+                        <outlet property="txtCPF" destination="N9l-a5-4Ko" id="2aY-Fb-TJc"/>
                         <outlet property="txtLastName" destination="VoO-rF-A2V" id="aDO-H0-N0u"/>
                         <outlet property="txtName" destination="2hy-i8-hnd" id="0an-Jn-zvV"/>
                         <segue destination="wjD-HR-R5U" kind="show" identifier="SegueScreen2" id="FTs-8l-fqI"/>
@@ -73,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="68.815592203898049"/>
+            <point key="canvasLocation" x="-80.625" y="68.661971830985919"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yyh-9T-I18">

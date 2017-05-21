@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMaskTextfield
 
 class ViewController: UIViewController ,Screen2ViewControllerDelegate{
 
@@ -14,6 +15,7 @@ class ViewController: UIViewController ,Screen2ViewControllerDelegate{
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
     
+    @IBOutlet weak var txtCPF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = .green
